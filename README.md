@@ -11,6 +11,11 @@ MoMo Connect is a web application designed to process and manage MTN Mobile Mone
 - Detailed transaction history and filtering
 - Real-time transaction updates
 
+## Demo
+
+Watch our demonstration video to see MoMo Connect in action:
+[Demo Video](https://drive.google.com/file/d/1zvACUWeQeSJE_rck4YVSy5erVKhPtrsm/view?usp=sharing)
+
 ## Tech Stack
 
 ### Backend
