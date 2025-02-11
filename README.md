@@ -7,7 +7,9 @@ MoMo Connect is a web application designed to process and manage MTN Mobile Mone
 - Process MTN MoMo SMS data
 - Store transaction information in a structured database
 - RESTful API for data access and management
-- User-friendly web interface
+- Interactive transaction visualization dashboard
+- Detailed transaction history and filtering
+- Real-time transaction updates
 
 ## Tech Stack
 
@@ -18,8 +20,10 @@ MoMo Connect is a web application designed to process and manage MTN Mobile Mone
 - XML2JS for SMS parsing
 
 ### Frontend
-- React.js (planned)
-- Material-UI (planned)
+- Vanilla JavaScript
+- HTML5/CSS3
+- Chart.js for visualizations
+- Lucide Icons
 
 ## Prerequisites
 
@@ -31,7 +35,7 @@ MoMo Connect is a web application designed to process and manage MTN Mobile Mone
 
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
+   git clone [https://github.com/Yunis-konda001/momo_connect.git]
    cd momo-connect
    ```
 
@@ -44,45 +48,66 @@ MoMo Connect is a web application designed to process and manage MTN Mobile Mone
 3. Configure environment variables:
    Create a `.env` file in the backend directory with the following variables:
    ```
-   PORT=8000
+   PORT=4000
    DB_HOST=localhost
    DB_USER=your_database_user
    DB_PASSWORD=your_database_password
    DB_NAME=momo_connect
    ```
 
+4. Set up the frontend:
+   ```bash
+   cd ../frontend
+   # No installation needed - static files
+   ```
+
 ## Running the Application
 
-### Development Mode
+### Backend Development Mode
 ```bash
-cd backend
+# From the backend directory
 npm run dev
 ```
 
-### Production Mode
+### Backend Production Mode
 ```bash
-cd backend
+# From the backend directory
 npm start
 ```
 
-The server will start on http://localhost:8000
+### Frontend
+Open the `frontend/index.html` file in your web browser, or serve it using a static file server:
+```bash
+# Using Python's built-in server (from frontend directory)
+python3 -m http.server 3000
+```
 
 ## API Endpoints
 
 ### Base URL
-```
-http://localhost:8000
-```
+Development: `http://localhost:4000`
+Production: `https://momo-connect-api.onrender.com`
 
 ### Available Endpoints
 
-- `GET /` - Welcome message and API status
-- Additional endpoints will be documented as they are implemented
+#### Transaction Types
+- `GET /airtime` - Airtime transactions
+- `GET /bank-deposit` - Bank deposit transactions
+- `GET /bundles-and-packs` - Bundles and packs transactions
+- `GET /cash-power` - Cash power transactions
+- `GET /incoming-money` - Incoming money transactions
+- `GET /payment-to-code-holders` - Payment to code holders transactions
+- `GET /transfer-to-mobile-number` - Transfer to mobile number transactions
+- `GET /withdrawal-from-agent` - Withdrawal from agent transactions
+
+#### Transaction Statistics
+- `GET /{transaction-type}/total` - Get total amount and count for specific transaction type
 
 ## Development
 
 ### Running Tests
 ```bash
+# From the backend directory
 npm test
 ```
 
